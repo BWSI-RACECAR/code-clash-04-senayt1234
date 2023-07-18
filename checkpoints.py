@@ -35,26 +35,22 @@ class Solution:
             #return type: int
             
             #TODO: Write code below to returnn an int with the solution to the prompt.
-            smallest = 0
-            sub = 0
+            new_list = []
+
+            minimum = checkpoints[0]  # arbitrary number in list 
+
+            for x in checkpoints:
+                if x < minimum:
+                    minimum = x
+                    new_list.append(x)
             index = 0
-            while len(checkpoints)>index:
-                 sub = index 
-                 smallest = checkpoints[index]
-                 while len(checkpoints)>sub:
-                    if checkpoints[sub]<smallest:
-                        smallest = checkpoints[sub]
-                    sub = sub+1
-                 checkpoints[index] = smallest 
-                 index = index+1
-            index = 1
             big = 0
-            while len(checkpoints)>index:
+            while len(checkpoints)>index+1:
                  if (checkpoints[index+1] - checkpoints[index])>big:
                       big = checkpoints[index+1] - checkpoints[index]
                  index = index+1
 
-            return int(big)
+            return big
 
 def main():
     array = input().split(" ")
