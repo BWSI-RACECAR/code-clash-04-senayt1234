@@ -45,9 +45,9 @@ class Solution:
                     new_list.append(x)
             index = 0
             big = 0
-            while len(checkpoints)>index+1:
-                 if (checkpoints[index+1] - checkpoints[index])>big:
-                      big = checkpoints[index+1] - checkpoints[index]
+            while len(new_list)>index+1:
+                 if (new_list[index+1] - new_list[index])>big:
+                      big = new_list[index+1] - new_list[index]
                  index = index+1
 
             return big
