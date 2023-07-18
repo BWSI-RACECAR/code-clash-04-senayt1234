@@ -47,8 +47,14 @@ class Solution:
                     sub = sub+1
                  checkpoints[index] = smallest 
                  index = index+1
+            index = 1
+            big = 0
+            while len(checkpoints)>index:
+                 if (checkpoints[index+1] - checkpoints[index])>big:
+                      big = checkpoints[index+1] - checkpoints[index]
+                 index = index+1
 
-            return checkpoints
+            return int(big)
 
 def main():
     array = input().split(" ")
