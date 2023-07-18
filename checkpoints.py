@@ -35,14 +35,14 @@ class Solution:
             #return type: int
             
             #TODO: Write code below to returnn an int with the solution to the prompt.
+            index = 0
             new_list = []
-
-            minimum = checkpoints[0]  # arbitrary number in list 
-
-            for x in checkpoints:
-                if x < minimum:
-                    minimum = x
-                    new_list.append(x)
+            while len(checkpoints)> index:
+                minimum = checkpoints[index]  # arbitrary number in list 
+                for x in checkpoints:
+                    if x < minimum:
+                        minimum = x
+                        new_list.append(x)
             index = 0
             big = 0
             while len(new_list)>index+1:
