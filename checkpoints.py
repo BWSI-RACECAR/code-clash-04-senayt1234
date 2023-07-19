@@ -36,19 +36,18 @@ class Solution:
             
             #TODO: Write code below to returnn an int with the solution to the prompt.
             index = 0
-            new_list = []
-            while len(checkpoints)> index:
-                minimum = checkpoints[index]  # arbitrary number in list 
-                for x in checkpoints:
-                    if x < minimum:
-                        minimum = x
-                        new_list.append(x)
+            for i in range(0, len(arr)):    
+                for j in range(i+1, len(arr)):    
+                    if(arr[i] > arr[j]):    
+                        index = arr[i]    
+                        arr[i] = arr[j]    
+                        arr[j] = index
             index = 0
             big = 0
-            while len(new_list)>index+1:
-                 if (new_list[index+1] - new_list[index])>big:
-                      big = new_list[index+1] - new_list[index]
-                 index = index+1
+            while len(checkpoints)>index+1:
+                if (checkpoints[index+1] - checkpoints[index])>big:
+                    big = checkpoints[index+1] - checkpoints[index]
+                index = index+1
 
             return big
 
